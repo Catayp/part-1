@@ -1,76 +1,76 @@
 //unicafe
-// import React, { useState } from 'react';
-// import { createRoot } from 'react-dom/client';
-// const Statistics = ({good, neutral, bad}) => {
-//   if(good == 0 && neutral == 0 && bad == 0){
-//     return(
-//       <>
-//       <p>No feedback given</p>
-//       </>
-//     )
-//   }
-//   return(
-//     <>
-//     <table>
-//       <tbody>
-//         <Statistic text="Good" value={good} /> 
-//         <Statistic text="Neutral" value={neutral} />
-//         <Statistic text="bad" value={bad} />
-//         <Statistic text="all" value={good + neutral + bad} />
-//         <Statistic text="average" value={(good + neutral + bad)/3} />
-//         <Statistic text="positive" value={100*good/(good + neutral + bad)} />
-//       </tbody>
-//     </table>
-//     </> 
-//   ) 
-// }
-// const Statistic = ({text, value}) => {
-//   return(
-//     <>
-//     <tr>
-//       <td>{text}</td>
-//       <td>{value}</td>
-//     </tr>
-//     </>
-//   )
-// }
-// const Button = ({click, text}) => {
-//   return(
-//     <>
-//     <button onClick={click}>
-//       {text}
-//     </button>
-//     </>
-//   )
-// }
-// const App = () => {
-//   const [good, setGood] = useState(0)
-//   const [neutral, setNeutral] = useState(0)
-//   const [bad, setBad] = useState(0)
+import React, { useState } from 'react';
+import { createRoot } from 'react-dom/client';
+const Statistics = ({good, neutral, bad}) => {
+  if(good == 0 && neutral == 0 && bad == 0){
+    return(
+      <>
+      <p>No feedback given</p>
+      </>
+    )
+  }
+  return(
+    <>
+    <table>
+      <tbody>
+        <Statistic text="Good" value={good} /> 
+        <Statistic text="Neutral" value={neutral} />
+        <Statistic text="bad" value={bad} />
+        <Statistic text="all" value={good + neutral + bad} />
+        <Statistic text="average" value={(good + neutral + bad)/3} />
+        <Statistic text="positive" value={100*good/(good + neutral + bad)} />
+      </tbody>
+    </table>
+    </> 
+  ) 
+}
+const Statistic = ({text, value}) => {
+  return(
+    <>
+    <tr>
+      <td>{text}</td>
+      <td>{value}</td>
+    </tr>
+    </>
+  )
+}
+const Button = ({click, text}) => {
+  return(
+    <>
+    <button onClick={click}>
+      {text}
+    </button>
+    </>
+  )
+}
+const App = () => {
+  const [good, setGood] = useState(0)
+  const [neutral, setNeutral] = useState(0)
+  const [bad, setBad] = useState(0)
 
-//   const clickGood = () => setGood(good + 1)
-//   const clickNeutral = () => setNeutral(neutral + 1)
-//   const clickBad = () => setBad(bad +1)
+  const clickGood = () => setGood(good + 1)
+  const clickNeutral = () => setNeutral(neutral + 1)
+  const clickBad = () => setBad(bad +1)
 
-//   return (
-//     <div>
-//       <h1>
-//         give feedback
-//       </h1>
-//       <Button click={clickGood} text="Good" />
-//       <Button click={clickNeutral} text="Neutral" />
-//       <Button click={clickBad} text="Bad" />
-//       <h2>
-//         statistics
-//       </h2>
-//       <Statistics good={good} neutral={neutral} bad={bad} />
-//     </div>
-//   )
-// }
+  return (
+    <div>
+      <h1>
+        give feedback
+      </h1>
+      <Button click={clickGood} text="Good" />
+      <Button click={clickNeutral} text="Neutral" />
+      <Button click={clickBad} text="Bad" />
+      <h2>
+        statistics
+      </h2>
+      <Statistics good={good} neutral={neutral} bad={bad} />
+    </div>
+  )
+}
 
-// const container = document.getElementById('root')
-// const root = createRoot(container);
-// root.render(<App />)
+const container = document.getElementById('root')
+const root = createRoot(container);
+root.render(<App />)
 //1.1 - 1.5 courseinfo 
 // import React from 'react';
 // import ReactDOM from 'react-dom';
@@ -134,38 +134,39 @@
 //   document.getElementById('root')
 // ); 
 //---------------------------------------------------------------------------
-import React, { useState } from 'react';
-import { createRoot } from 'react-dom/client';
-const point = []
-const Anecdot = ({anec,i})=>{
-  return(
-    <>
-    <p>{anec[i]}</p>
-    </>
-  ) 
-}
-const App = (props) => {
-  const [selected, setSelected] = useState(0)
-  const num = () => {
-    let random = Math.round(Math.random()*(anecdotes.length - 0) + 0)
-    setSelected(random)
-  }
-  return (
-    <div>
-      <Anecdot anec={props.anecdotes} i={selected} />
-      <button onClick={num}>next anecdote</button>
-    </div>
-  )
-}
+// anecdotes
+//import React, { useState } from 'react';
+// import { createRoot } from 'react-dom/client';
+// const point = []
+// const Anecdot = ({anec,i})=>{
+//   return(
+//     <>
+//     <p>{anec[i]}</p>
+//     </>
+//   ) 
+// }
+// const App = (props) => {
+//   const [selected, setSelected] = useState(0)
+//   const num = () => {
+//     let random = Math.round(Math.random()*(anecdotes.length - 0) + 0)
+//     setSelected(random)
+//   }
+//   return (
+//     <div>
+//       <Anecdot anec={props.anecdotes} i={selected} />
+//       <button onClick={num}>next anecdote</button>
+//     </div>
+//   )
+// }
 
-const anecdotes = [
-  'If it hurts, do it more often',
-  'Adding manpower to a late software project makes it later!',
-  'The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.',
-  'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.',
-  'Premature optimization is the root of all evil.',
-  'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
-]
-const container = document.getElementById('root')
-const root = createRoot(container);
-root.render(<App anecdotes={anecdotes} />)
+// const anecdotes = [
+//   'If it hurts, do it more often',
+//   'Adding manpower to a late software project makes it later!',
+//   'The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.',
+//   'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.',
+//   'Premature optimization is the root of all evil.',
+//   'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
+// ]
+// const container = document.getElementById('root')
+// const root = createRoot(container);
+// root.render(<App anecdotes={anecdotes} />)
